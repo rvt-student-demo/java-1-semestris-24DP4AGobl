@@ -4,22 +4,40 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Statistics statistics = new Statistics();
+        Statistics userInputStats = new Statistics();
+        Statistics userInputOddN = new Statistics();
+        Statistics userInputEvenN = new Statistics();
 
-        System.out.println("Cik tev ir gadu?");
-        int age = Integer.valueOf(scanner.nextLine());
+        System.out.println("==[          Statistics          ]==");
 
-        boolean isAdult = age >= 18;
+        statistics.addNumber(3);
+        statistics.addNumber(5);
+        statistics.addNumber(1);
+        statistics.addNumber(2);
 
-        if (age >= 18) {
-            System.out.println("Tu esi pilngadigs.");
-        }else{
-            System.out.println("Tu esi nepilngadigs, piekluves nav.");
+        System.out.println("Count: " + statistics.getCount());
+        System.out.println("Sum: " + statistics.sum());
+        System.out.println("Average: " + statistics.average());
+
+
+        System.out.println("\n");
+
+
+        System.out.println("Enter numbers:");
+        while(true) {
+            int number = Integer.valueOf(scanner.nextLine());
+            if (number == -1) {
+                break;
+            } else if (number % 2 == 0) {
+                userInputEvenN.addNumber(number);
+            } else if (number % 2 != 0) {
+                userInputOddN.addNumber(number);
+            }
+            userInputStats.addNumber(number);
         }
-
-        if (isAdult){
-            System.out.println("Tu esi pilngadigs.");
-        }else{
-            System.out.println("Tu esi nepilngadigs, piekluves nav.");
-        } 
+        System.out.println("Sum: " + userInputStats.sum());
+        System.out.println("Sum of even numbers: " + userInputEvenN.sum());
+        System.out.println("Sum of odd number: " + userInputOddN.sum());
     }
 }
