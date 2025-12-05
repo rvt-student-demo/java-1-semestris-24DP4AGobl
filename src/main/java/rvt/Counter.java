@@ -18,7 +18,9 @@ public class Counter {
 
 
     public void increase(int increaseBy) {
-        counter += increaseBy;
+        if (increaseBy > 0) {
+            counter += increaseBy;
+        }
     }
 
     public void increase() {
@@ -27,7 +29,9 @@ public class Counter {
     
 
     public void decrease(int decreaseBy) {
-        counter -= decreaseBy;
+        if (decreaseBy > 0) {
+            counter -= decreaseBy;
+        }
     }
 
     public void decrease() {
