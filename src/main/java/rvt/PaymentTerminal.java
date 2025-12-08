@@ -31,6 +31,8 @@ public class PaymentTerminal {
 
     public boolean eatAffordably(PaymentCard card) {
         if (card.balance() >= 2.5) {
+            card.takeMoney(2.5);
+            affordableMeals ++;
             return true;
         }
 
@@ -39,10 +41,17 @@ public class PaymentTerminal {
 
     public boolean eatHeartily(PaymentCard card) {
         if (card.balance() >= 4.3) {
+            card.takeMoney(4.3);
+            heartyMeals ++;
             return true;
         }
 
         return false;
+    }
+
+    public void addMoneyToCard(PaymentCard card, double sum) {
+        card.addMoney(sum);
+        money += sum;
     }
 
     public String toString() {
