@@ -11,6 +11,12 @@ public class Box {
         this.length = length;
     }
 
+    public Box(double side) {
+        this.width = side;
+        this.height = side;
+        this.length = side;
+    }
+
     Box(Box oldBox) {
         this.width = oldBox.width;
         this.height = oldBox.height;
@@ -52,9 +58,8 @@ public class Box {
     }
 
 
-
     public Box biggerBox(Box oldBox) {
-        return new Box( 1.25 * oldBox.width(), 1.25 * oldBox.height(), 1.25 * oldBox.length());
+        return new Box(1.25 * oldBox.width(), 1.25 * oldBox.height(), 1.25 * oldBox.length());
     }
 
     public Box smallerBox(Box oldBox ) {
