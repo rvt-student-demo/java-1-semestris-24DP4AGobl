@@ -1,7 +1,7 @@
 package rvt;
 import java.util.Scanner;
 
-public class userFriendlyDivision {
+public class Chapter100 {
     public static void main(String[] args){
         int numerator = 0;
         int divisor = 0;
